@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/, // Update the test to include .jsx files
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -26,4 +26,5 @@ module.exports = {
       maxChunks: 1,
     }),
   ],
+  
 };

@@ -7,14 +7,19 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Greeting.destroy_all
+
+# Array of greeting
 greetings = [
-  "Hello!",
-  "Hey!",
-  "Hi!",
-  "Hello there!",
-  "Hello Uganda....!"
+  "Hello, welcome to our platform!",
+  "Greetings from our team!",
+  "Hi there! We're glad you're here.",
+  "Welcome aboard!",
+  "Warm greetings to all our new users."
 ]
 
-greetings.each do |content|
-  Message.find_or_create_by(content: content)
+# Create 5 greetings
+greetings.each do |greeting|
+  Greeting.create(body: greeting)
 end
