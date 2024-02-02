@@ -1,22 +1,23 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const GREETINGS_URL = "http://127.0.0.1:3000/api/v1/greetings";
+const GREETINGS_URL = "/api/v1/greetings";
 
-export const getGreetings = createAsyncThunk(
-  "greetings/getGreetings",
-  async (_, thunkAPI) => {
-    try {
-      const resp = await axios.get(GREETINGS_URL);
-      return resp.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
+
+// Action Type Constants
+const GET_GREETINGS = "greetings/getGreetings";
+
+export const getGreetings = createAsyncThunk(GET_GREETINGS, async (_, thunkAPI) => {
+  try {
+    const resp = await axios.get(GREETINGS_URL);
+    return resp.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
   }
-);
+});
 
 const greetingsSlice = createSlice({
-  name: "greeting",
+  name: "greetings",
   initialState: {
     randomGreeting: "",
   },

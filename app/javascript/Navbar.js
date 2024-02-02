@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <nav style={{width:'100%'}}>
@@ -13,7 +14,7 @@ const Navbar = () => {
           padding: 0
         }}>
         <li>
-          <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/greetings">Greetings</Link>
